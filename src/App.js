@@ -1,5 +1,7 @@
 import Home from './Components/Home';
 import Footer from './Components/Footer';
+import Container from 'react-bootstrap/Container';
+
 
 function App() {
   let app = {
@@ -11,7 +13,7 @@ function App() {
   }
 
   return (
-    <Container className={app} fluid>
+    <Container style={app} fluid>
       <Home />
       
       <br />

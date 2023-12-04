@@ -1,7 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import './Footer.css';
 
 function Footer() {
     let bottomBox = {
@@ -22,8 +21,8 @@ function Footer() {
     }
 
     return (
-        <div className={bottomBox}>
-            <Container fluid className={bottomDiv}>
+        <div style={bottomBox}>
+            <Container fluid style={bottomDiv}>
                 <Row style={{textAlign: "center"}}>
                 </Row>
                 <Row>
