@@ -1,7 +1,7 @@
 import Home from './Components/Home';
 import Footer from './Components/Footer';
 import Container from 'react-bootstrap/Container';
-
+import Header from './Components/Header';
 
 function App() {
   let app = {
@@ -14,6 +14,7 @@ function App() {
 
   return (
     <Container style={app} fluid>
+      <Header />
       <Home />
       
       <br />
