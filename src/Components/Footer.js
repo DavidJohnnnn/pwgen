@@ -30,8 +30,8 @@ function Footer() {
                 </Row>
                 <Row>
                     <Col></Col>
-                    <Col>© 2023 David John.</Col>
                     <Col></Col>
+                    <Col>© 2023 David John.</Col>
                 </Row>
             </Container>
         </div>
