@@ -17,7 +17,7 @@ function Home() {
     // The 'now' and 'variant' and 'label' will be based on a function that is checks whether the generated password is actually strong enough.
 
     let pwLine = {
-      fontFamily: `"Lucida Console","Courier New",Monaco,"Nimbus Mono L",monospace`,
+      fontFamily: `"Lucida Console","Courier New",Monaco,"Nimbus Mono L",monospace`
     }
     return (
       <>
@@ -35,13 +35,74 @@ function Home() {
 
   function PasswordSelectors() {
     // First col: slider for password length
-    // Second col: Specifiers for generated passwords
+    // Second col: Specifiers for generated passwords (radio buttons; note that name is what makes radio buttons select only one element)
     // Third col: Checkbox list for whether the user wants uppercase, lowercase, numbers and special characters
     return (
       <Card>
         <Row>
           <Col>
-
+            <Card>
+              <Form.Label>Password Length</Form.Label>
+              <Form.Range variant="success" />
+            </Card>
+          </Col>
+          <Col>
+            <Card>
+              <Form>
+                <div key="radio">
+                  <Form.Check // prettier-ignore
+                    type="radio"
+                    id="radio-1"
+                    label="Example pw radio"
+                    name="pwrad"
+                  />
+                  <Form.Check // prettier-ignore
+                    type="radio"
+                    id="radio-2"
+                    label="Example pw radio"
+                    name="pwrad"
+                  />
+                  <Form.Check // prettier-ignore
+                    type="radio"
+                    id="radio-3"
+                    label="Example pw radio"
+                    name="pwrad"
+                  />
+                </div>
+              </Form>
+            </Card>
+          </Col>
+          <Col>
+            <Card>
+              <Form>
+                <div key="checkbox">
+                  <Form.Check
+                    type="checkbox"
+                    id="checkbox-1"
+                    label="Uppercase"
+                    name="pwchk"
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    id="checkbox-2"
+                    label="Lowercase"
+                    name="pwchk"
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    id="checkbox-3"
+                    label="Numbers"
+                    name="pwchk"
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    id="checkbox-4"
+                    label="Special characters"
+                    name="pwchk"
+                  />
+                </div>
+              </Form>
+            </Card>
           </Col>
         </Row>
       </Card>
@@ -53,8 +114,7 @@ function Home() {
     <Container style={page} fluid>
       <Stack gap={3}>
         <PasswordLine />
-        <div className="p-2">Second item</div>
-        <div className="p-2">Third item</div>
+        <PasswordSelectors />
       </Stack>
       <br />
       <br />
