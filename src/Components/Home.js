@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Stack, Card, Row, Col, Form, ProgressBar } from 'react-bootstrap';
-
+import { Container, Stack, Card, Row, Col, Form } from 'react-bootstrap';
+import PasswordLine from './PasswordLine';
 
 function Home() {
   let page = {
@@ -11,25 +11,7 @@ function Home() {
     maxWidth: "70%"
   }
 
-  // First div in the stack will be the line where the password that is generated will show up as well as a refresh button to redo the password based on the entered parameters.
-  function PasswordLine() {
-    // Includes progress bar to judge whether the password is decent or not.
-    // The 'now' and 'variant' and 'label' will be based on a function that is checks whether the generated password is actually strong enough.
-
-    let pwLine = {
-      fontFamily: `"Lucida Console","Courier New",Monaco,"Nimbus Mono L",monospace`
-    }
-    return (
-      <>
-        <Card>
-          <Card.Body style={pwLine}>
-            <Card.Title>Placeholder text for generated password.</Card.Title>
-          </Card.Body>
-          <ProgressBar now={60} variant="warning" label={'Not strong enough'}/>
-        </Card>
-      </>
-    );
-  }
+  // First item in the stack will be the line where the password that is generated will show up as well as a refresh button to redo the password based on the entered parameters.
 
   // Second item in stack will include input text field which captures the users intended memorable phrase that will be leeted. The memorable phrase should be matched against the pwnedpassword api: https://haveibeenpwned.com/Passwords
 
