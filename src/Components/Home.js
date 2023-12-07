@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Stack, Card, Row, Col, Form } from 'react-bootstrap';
+import { Container, Stack} from 'react-bootstrap';
 import PasswordLine from './PasswordLine';
+import PasswordSelectors from './PWRow2';
 
 function Home() {
   let page = {
@@ -14,82 +15,6 @@ function Home() {
   // First item in the stack will be the line where the password that is generated will show up as well as a refresh button to redo the password based on the entered parameters.
 
   // Second item in stack will include input text field which captures the users intended memorable phrase that will be leeted. The memorable phrase should be matched against the pwnedpassword api: https://haveibeenpwned.com/Passwords
-
-  function PasswordSelectors() {
-    // First col: slider for password length
-    // Second col: Specifiers for generated passwords (radio buttons; note that name is what makes radio buttons select only one element)
-    // Third col: Checkbox list for whether the user wants uppercase, lowercase, numbers and special characters
-    return (
-      <Card>
-        <Row>
-          <Col>
-            <Card>
-              <Form.Label>Password Length</Form.Label>
-              <Form.Range variant="success" />
-            </Card>
-          </Col>
-          <Col>
-            <Card>
-              <Form>
-                <div key="radio">
-                  <Form.Check // prettier-ignore
-                    type="radio"
-                    id="radio-1"
-                    label="Example pw radio"
-                    name="pwrad"
-                  />
-                  <Form.Check // prettier-ignore
-                    type="radio"
-                    id="radio-2"
-                    label="Example pw radio"
-                    name="pwrad"
-                  />
-                  <Form.Check // prettier-ignore
-                    type="radio"
-                    id="radio-3"
-                    label="Example pw radio"
-                    name="pwrad"
-                  />
-                </div>
-              </Form>
-            </Card>
-          </Col>
-          <Col>
-            <Card>
-              <Form>
-                <div key="checkbox">
-                  <Form.Check
-                    type="checkbox"
-                    id="checkbox-1"
-                    label="Uppercase"
-                    name="pwchk"
-                  />
-                  <Form.Check
-                    type="checkbox"
-                    id="checkbox-2"
-                    label="Lowercase"
-                    name="pwchk"
-                  />
-                  <Form.Check
-                    type="checkbox"
-                    id="checkbox-3"
-                    label="Numbers"
-                    name="pwchk"
-                  />
-                  <Form.Check
-                    type="checkbox"
-                    id="checkbox-4"
-                    label="Special characters"
-                    name="pwchk"
-                  />
-                </div>
-              </Form>
-            </Card>
-          </Col>
-        </Row>
-      </Card>
-    );
-  }
 
 
   return (
