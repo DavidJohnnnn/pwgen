@@ -1,4 +1,5 @@
 import {Card, Form, Row, Col } from 'react-bootstrap';
+import { useState } from 'react';
 
 export default function PasswordSelectors() {
   // First col: slider for password length
@@ -22,12 +23,29 @@ export default function PasswordSelectors() {
 }
 
 function PasswordLengthSlider ({slider}) {
-    return (
-      <Card>
-        <Form.Label>Password Length</Form.Label>
-        <Form.Range variant="success" onChange={slider}/>
-      </Card>
-    );
+  const [sliderValue, setSliderValue] = useState("24");
+  const sliderTemp = (val) => {
+    setSliderValue(val);
+  }
+  return (
+    <Card>
+      <Form.Label>Password Length</Form.Label>
+      <Row>
+        <Col>
+          <Form.Label>{sliderValue}</Form.Label>
+        </Col>
+        <Col xs={10}>
+          <Form.Range
+            variant="success"
+            min={8}
+            max={128}
+            defaultValue={24}
+            onChange={(event) => {sliderTemp(event.target.value);}}
+          />
+        </Col>
+      </Row>
+    </Card>
+  );
 }
 
 function PasswordRadioButtons () {
