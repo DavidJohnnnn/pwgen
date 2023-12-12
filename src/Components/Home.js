@@ -16,21 +16,15 @@ function Home() {
 
   // Second item in stack will include input text field which captures the users intended memorable phrase that will be leeted. The memorable phrase should be matched against the pwnedpassword api: https://haveibeenpwned.com/Passwords
 
-  function PasswordInput () {
-    return (
-      <Form>
-        
-      </Form>
-    )
-  }
-
 
   return (
     <Container style={page} fluid>
-      <Stack gap={3}>
-        <PasswordLine />
-        <PasswordSelectors />
-      </Stack>
+      <Form>
+        <Stack gap={3}>
+          <PasswordLine />
+          <PasswordSelectors />
+        </Stack>
+      </Form>
       <br />
       <br />
     </Container>
