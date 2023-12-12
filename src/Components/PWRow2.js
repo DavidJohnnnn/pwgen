@@ -28,23 +28,28 @@ function PasswordLengthSlider ({slider}) {
     setSliderValue(val);
   }
   return (
-    <Card>
+    <Form.Group as={Row}>
       <Form.Label>Password Length</Form.Label>
-      <Row>
-        <Col>
-          <Form.Label>{sliderValue}</Form.Label>
-        </Col>
-        <Col xs={10}>
-          <Form.Range
-            variant="success"
-            min={8}
-            max={128}
-            defaultValue={24}
-            onChange={(event) => {sliderTemp(event.target.value);}}
-          />
-        </Col>
-      </Row>
-    </Card>
+      <Col>
+        <Form.Control type="number" placeholder={sliderValue} max={128} min={8} value={sliderValue} onChange={(event) => {
+          console.log(event);
+          sliderTemp(event.target.value);
+        }}/>
+        {/* <Form.Control>{sliderValue}</Form.Control> */}
+      </Col>
+      <Col xs={9}>
+        <Form.Range
+          variant="success"
+          min={8}
+          max={128}
+          defaultValue={24}
+          value={sliderValue}
+          onChange={(event) => {
+            sliderTemp(event.target.value);
+          }}
+        />
+      </Col>
+    </Form.Group>
   );
 }
 
