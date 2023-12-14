@@ -1,4 +1,4 @@
-import {Card, Form, Row, Col } from 'react-bootstrap';
+import {Card, Form, Row, Col, CardGroup } from 'react-bootstrap';
 import { useState } from 'react';
 
 export default function PasswordSelectors() {
@@ -6,19 +6,13 @@ export default function PasswordSelectors() {
   // Second col: Specifiers for generated passwords (radio buttons; note that name is what makes radio buttons select only one element)
   // Third col: Checkbox list for whether the user wants uppercase, lowercase, numbers and special characters
   return (
-    <Card>
-      <Row>
-        <Col>
-          <PasswordLengthSlider />
-        </Col>
-        <Col>
-          <PasswordRadioButtons />
-        </Col>
-        <Col>
-          <PasswordCheckboxes />
-        </Col>
-      </Row>
-    </Card>
+    <>
+      <CardGroup>
+        <PasswordLengthSlider />
+        <PasswordRadioButtons />
+        <PasswordCheckboxes />
+      </CardGroup>
+    </>
   );
 }
 
@@ -28,36 +22,47 @@ function PasswordLengthSlider ({slider}) {
     setSliderValue(val);
   }
   return (
-    <Form.Group as={Row}>
-      <Form.Label>Password Length</Form.Label>
-      <Col>
-        <Form.Control type="number" placeholder={sliderValue} max={128} min={8} value={sliderValue} onChange={(event) => {
-          console.log(event);
-          sliderTemp(event.target.value);
-        }}/>
-        {/* <Form.Control>{sliderValue}</Form.Control> */}
-      </Col>
-      <Col xs={9}>
-        <Form.Range
-          variant="success"
-          min={8}
-          max={128}
-          defaultValue={24}
-          value={sliderValue}
-          onChange={(event) => {
-            sliderTemp(event.target.value);
-          }}
-        />
-      </Col>
-    </Form.Group>
+    <Card>
+      <Card.Body>
+        <Form.Group as={Row}>
+          <Form.Label>Password Length</Form.Label>
+          <Col>
+            <Form.Control
+              type="number"
+              placeholder={sliderValue}
+              max={128}
+              min={8}
+              value={sliderValue}
+              onChange={(event) => {
+                console.log(event);
+                sliderTemp(event.target.value);
+              }}
+            />
+            {/* <Form.Control>{sliderValue}</Form.Control> */}
+          </Col>
+          <Col xs={8}>
+            <Form.Range
+              variant="success"
+              min={8}
+              max={128}
+              defaultValue={24}
+              value={sliderValue}
+              onChange={(event) => {
+                sliderTemp(event.target.value);
+              }}
+            />
+          </Col>
+        </Form.Group>
+      </Card.Body>
+    </Card>
   );
 }
 
 function PasswordRadioButtons () {
     return (
       <Card>
-        <Form>
-          <div key="radio">
+        <Card.Body>
+          <div key="radio" className="mb-3">
             <Form.Check // prettier-ignore
               type="radio"
               id="radio-1"
@@ -77,7 +82,7 @@ function PasswordRadioButtons () {
               name="pwrad"
             />
           </div>
-        </Form>
+        </Card.Body>
       </Card>
     );
 }
@@ -85,7 +90,7 @@ function PasswordRadioButtons () {
 function PasswordCheckboxes () {
   return (
     <Card>
-      <Form>
+      <Card.Body>
         <div key="checkbox">
           <Form.Check
             type="checkbox"
@@ -112,7 +117,7 @@ function PasswordCheckboxes () {
             name="pwchk"
           />
         </div>
-      </Form>
+      </Card.Body>
     </Card>
   );
 }
