@@ -12,9 +12,9 @@ export default function PasswordLine() {
   return (
     <>
       <Card>
-        <Card.Body style={pwLine}>
-          <Card.Title>Placeholder text for generated password.</Card.Title>
-        </Card.Body>
+        <Card.Header as="h2" style={pwLine}>
+          Placeholder text for generated password.
+        </Card.Header>
         <ProgressBar now={60} variant="warning" label={"Not strong enough"} />
       </Card>
     </>
