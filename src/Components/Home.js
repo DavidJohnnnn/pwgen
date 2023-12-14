@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Stack, Form} from 'react-bootstrap';
 import PasswordLine from './PasswordLine';
 import PasswordSelectors from './PWRow2';
+import PasswordInput from './PWRow3';
 
 function Home() {
   let page = {
@@ -23,6 +24,7 @@ function Home() {
         <Stack gap={3}>
           <PasswordLine />
           <PasswordSelectors />
+          <PasswordInput />
         </Stack>
       </Form>
       <br />
