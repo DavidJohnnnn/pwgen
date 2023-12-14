@@ -1,5 +1,6 @@
 import {Card, Form, Row, Col, CardGroup } from 'react-bootstrap';
 import { useState } from 'react';
+import PasswordInput from './PWRow3';
 
 export default function PasswordSelectors() {
   // First col: slider for password length
