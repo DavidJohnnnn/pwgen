@@ -1,10 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState } from 'react';
+
 import { Container, Stack, Form} from 'react-bootstrap';
 import PasswordLine from './PasswordLine';
 import PasswordSelectors from './PWRow2';
 import PasswordInput from './PWRow3';
 
 function Home() {
+  const [pwLength, setPwLength] = useState("24");
+
   let page = {
     backgroundImage: "#eeeeee",
     textAlign: "center",
@@ -23,8 +27,8 @@ function Home() {
       <Form>
         <Stack gap={3}>
           <PasswordLine />
-          <PasswordSelectors />
-          <PasswordInput />
+          <PasswordSelectors pwLength={pwLength} setPwLength={setPwLength} />
+          <PasswordInput pwLength={pwLength}/>
         </Stack>
       </Form>
       <br />

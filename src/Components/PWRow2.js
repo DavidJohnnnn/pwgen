@@ -2,14 +2,14 @@ import {Card, Form, Row, Col, CardGroup } from 'react-bootstrap';
 import { useState } from 'react';
 import PasswordInput from './PWRow3';
 
-export default function PasswordSelectors() {
+export default function PasswordSelectors({pwLength, setPwLength}) {
   // First col: slider for password length
   // Second col: Specifiers for generated passwords (radio buttons; note that name is what makes radio buttons select only one element)
   // Third col: Checkbox list for whether the user wants uppercase, lowercase, numbers and special characters
   return (
     <>
       <CardGroup>
-        <PasswordLengthSlider />
+        <PasswordLengthSlider sliderValue={pwLength} setSliderValue={setPwLength}/>
         <PasswordRadioButtons />
         <PasswordCheckboxes />
       </CardGroup>
@@ -17,8 +17,8 @@ export default function PasswordSelectors() {
   );
 }
 
-function PasswordLengthSlider ({slider}) {
-  const [sliderValue, setSliderValue] = useState("24");
+function PasswordLengthSlider ({sliderValue, setSliderValue}) {
+  // const [sliderValue, setSliderValue] = useState("24");
   const sliderTemp = (val) => {
     setSliderValue(val);
   }
