@@ -26,7 +26,7 @@ function Home() {
     <Container style={page} fluid>
       <Form>
         <Stack gap={3}>
-          <PasswordLine />
+          <PasswordLine pwLength={pwLength}/>
           <PasswordSelectors pwLength={pwLength} setPwLength={setPwLength} />
           <PasswordInput pwLength={pwLength}/>
         </Stack>
